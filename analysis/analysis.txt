@@ -15,12 +15,13 @@ values of WSIZE
 WSIZE    # duplicates
 2        60,453
 3        10,756
-4
-5
-7
-8
-9
-10
+4        1,987
+5		 663
+6		 362
+7		 226
+8		 151	
+9		 105
+10		 73
 
 =====
 Explain in your own words the conceptual differences between 
@@ -29,11 +30,14 @@ Answer these questions:
 
 (1) Why the results of these methods should be the same in 
 terms of changes made to the HashSet parameter.
+Because if you take a wordgram at i+1 of length a its the samne as taking the previous wordgram at i and shifting it with the word immediately after it. 
 
 (2) What are the conceptual differences between the two
 benchmarking methods
+One is reconstructing the wordgram every time and the other one is calling shiftadd.
 
 (3) Is the total amount of memory allocated for arrays
 the same or different in the two methods? Account for
 arrays created in the methods and arrays created by
 WordGram objects. Try to be quantitative in answering.
+It is the same because in benchmark we create a new wordgram every time but when shiftadd is called in benchmarkshift that also creates a new wordgran.
